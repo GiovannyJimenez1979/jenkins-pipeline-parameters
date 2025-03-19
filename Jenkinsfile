@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Setting up Python environment...'
                 // Set up Python environment (optional)
-                bat 'python3 -m venv venv'
+                bat 'python -m venv venv'
                 bat '. venv/bin/activate'                
             }
         }
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Running Python script...'
                 // Run the Python script with the parameters
-                bat "python3 sum.py ${params.NUMBER1} ${params.NUMBER2}"
+                bat "python sum.py ${params.NUMBER1} ${params.NUMBER2}"
             }
         }
     }    
